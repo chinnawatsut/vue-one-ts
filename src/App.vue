@@ -5,13 +5,15 @@
     <div>
       <div v-for="(todo,index) in todos" v-bind:key="index">{{todo}} {{index}}</div>
     </div>
+    <todo-entry></todo-entry>
   </div>
-  
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import TodoEntry from './TodoEntry.vue';
+Vue.component('todo-entry', TodoEntry);
 
 @Component
 export default class App extends Vue {
