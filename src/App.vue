@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <h1>Todolist</h1>
-    <input type="text" v-model="entry"/>
-    <button @click="addTodo">Add</button>
+    <input type="text" v-model="entry" @keyup.enter="addTodo"/>
     <div>
-      <div v-for="todo in todos" v-bind:key="todo.key">{{todo}}</div>
+      <div v-for="(todo,index) in todos" v-bind:key="index">{{todo}} {{index}}</div>
     </div>
   </div>
+  
 </template>
 
 <script lang="ts">
@@ -20,6 +20,7 @@ export default class App extends Vue {
   addTodo() {
     this.todos.push(this.entry)
   }
+
 }
 
 </script>
