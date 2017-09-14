@@ -1,6 +1,8 @@
 <template>
+
     <div id="todoEntry">
         <h1 @click="changeMessage">{{myMessage}}</h1>
+        <input type="text" v-model="myMessage">
   </div>
 </template>
 
@@ -19,6 +21,7 @@ export default class TodoEntry extends Vue{
     }
     
     changeMessage() {
+
     }
 }
 </script>
