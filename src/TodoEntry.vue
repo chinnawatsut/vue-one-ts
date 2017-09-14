@@ -1,6 +1,6 @@
 <template>
     <div id="todoEntry">
-        <h1>This is Todo Entry</h1>
+        <h1 @click="changeMessage">{{myMessage}}</h1>
   </div>
 </template>
 
@@ -8,9 +8,18 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
-@Component
+@Component({
+    props: {
+    myMessage: String
+  }
+})
 export default class TodoEntry extends Vue{
-
+    constructor() {
+        super();
+    }
+    
+    changeMessage() {
+    }
 }
 </script>
 

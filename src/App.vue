@@ -5,7 +5,9 @@
     <div>
       <div v-for="(todo,index) in todos" v-bind:key="index">{{todo}} {{index}}</div>
     </div>
-    <todo-entry></todo-entry>
+    <todo-entry v-bind:my-message="parentMsg" ></todo-entry>
+    <todo-entry v-bind:my-message="parentMsg" ></todo-entry>
+    
   </div>
 </template>
 
@@ -13,12 +15,15 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import TodoEntry from './TodoEntry.vue';
-Vue.component('todo-entry', TodoEntry);
-
-@Component
+@Component({
+    components: {
+        "todo-entry": TodoEntry
+    }
+})
 export default class App extends Vue {
   todos: string[] = ['todo1','todo2']
   entry: string = ''
+  parentMsg : string = 'This message from parent'
   addTodo() {
     this.todos.push(this.entry)
   }
