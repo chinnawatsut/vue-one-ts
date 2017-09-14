@@ -6,6 +6,7 @@
       <div v-for="(todo,index) in todos" v-bind:key="index">{{todo}} {{index}}</div>
     </div>
     <h1>{{parentMsg}}</h1>
+    <input type="text" v-model="parentMsg">
     <todo-entry v-bind:my-message="parentMsg" ></todo-entry>
   </div>
 </template>
