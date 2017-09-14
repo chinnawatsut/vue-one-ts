@@ -14,7 +14,6 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {}
-          // other vue-loader options go here
         }
       },
       {
@@ -24,6 +23,10 @@ module.exports = {
         options: {
           appendTsSuffixTo: [/\.vue$/]
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

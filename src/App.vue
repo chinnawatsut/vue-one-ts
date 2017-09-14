@@ -1,5 +1,19 @@
 <template>
   <div id="app">
+
+     <v-toolbar>
+    <v-toolbar-title>Register</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat>Link One</v-btn>
+      <v-btn flat>Link Two</v-btn>
+      <v-btn flat>Link Three</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
+
+
+
     <h1>Todolist</h1>
     <input type="text" v-model="entry" @keyup.enter="addTodo"/>
     <div>
@@ -8,6 +22,12 @@
     <h1>{{parentMsg}}</h1>
     <input type="text" v-model="parentMsg">
     <todo-entry v-bind:my-message="parentMsg" ></todo-entry>
+
+ 
+
+
+
+
   </div>
 </template>
 
@@ -15,6 +35,8 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import TodoEntry from './TodoEntry.vue';
+import 'vuetify/dist/vuetify.min.css'
+
 @Component({
     components: {
         "todo-entry": TodoEntry
@@ -33,30 +55,4 @@ export default class App extends Vue {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
