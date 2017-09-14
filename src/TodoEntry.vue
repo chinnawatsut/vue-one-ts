@@ -16,13 +16,7 @@ import Component from 'vue-class-component'
   }
 })
 export default class TodoEntry extends Vue{
-    constructor() {
-        super();
-    }
-    
-    changeMessage() {
 
-    }
 }
 </script>
 
